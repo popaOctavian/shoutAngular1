@@ -14,7 +14,7 @@ export class ShoutsService{
     addMessage(shouts:Shouts){
         const body=JSON.stringify(shouts);
         const headers=new Headers({'Content-Type':'application/json'});
-        return this._http.post('https://angular2-deployment-shoutbox.herokuapp.com/message',body,{headers:headers})
+        return this._http.post('http://localhost:3000/message',body,{headers:headers})
             .map(response=>{
                 const data=response.json().obj;
                 let shout=new Shouts(data.user,data.content);
@@ -24,7 +24,7 @@ export class ShoutsService{
     }
    // https://angular2-deployment-shoutbox.herokuapp.com/message
     getMessages(){
-        return this._http.get('https://angular2-deployment-shoutbox.herokuapp.com/message').map(response=> {
+        return this._http.get('http://localhost:3000/message').map(response=> {
             const data = response.json().obj;
             let objs:any[]=[];
             for(let i=0;i<data.length;i++){

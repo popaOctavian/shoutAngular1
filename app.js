@@ -9,8 +9,8 @@ var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
 var messageRoutes = require('./routes/shouts');
 var app = express();
-
-mongoose.connect('userTest:tavy4589@ds035046.mlab.com:35046/angular2-deployment-shoutbox');
+mongoose.connect('localhost:27017/node-angular');
+///mongoose.connect('userTest:tavy4589@ds035046.mlab.com:35046/angular2-deployment-shoutbox');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
